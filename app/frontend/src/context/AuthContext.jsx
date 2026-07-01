@@ -45,10 +45,17 @@ export function AuthProvider({ children }) {
     };
 
     const logout = async () => {
-        try {
+       Backend works well. Let me fix the lint issues in my files:
+ "        try {
             await api.post(\"/auth/logout\");
         } catch {}
-        localStorage.removeItem(\"token\");
+        localStorage.removeItem(\"token\");" --new-str "        try {
+            await api.post(\"/auth/logout\");
+        } catch {
+            // ignore logout errors
+        }
+        localStorage.removeItem(\"token\");"
+
         setUser(null);
     };
 
