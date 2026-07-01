@@ -1,0 +1,88 @@
+ "@import url(\"https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap\");
+@import url(\"https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap\");
+@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600&display=swap\");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: \"Manrope\", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #faf9f6;
+    color: #1c1c1e;
+}
+
+.font-native {
+    font-family:
+        \"Noto Sans Devanagari\",
+        \"Noto Sans Tamil\",
+        \"Noto Sans Telugu\",
+        \"Noto Sans Bengali\",
+        \"Instrument Serif\",
+        serif;
+    font-feature-settings: \"kern\" 1;
+}
+
+.font-serif-display {
+    font-family: \"Instrument Serif\", serif;
+    letter-spacing: -0.02em;
+}
+
+/* Subtle grain texture layer */
+.grain::before {
+    content: \"\";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\");
+    mix-blend-mode: multiply;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(28, 28, 30, 0.05);
+}
+
+@layer base {
+    :root {
+        --background: 45 25% 97%;
+        --foreground: 240 6% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 6% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 6% 11%;
+        --primary: 24 80% 42%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 45 20% 93%;
+        --secondary-foreground: 240 6% 11%;
+        --muted: 45 20% 93%;
+        --muted-foreground: 240 3% 40%;
+        --accent: 45 20% 93%;
+        --accent-foreground: 240 6% 11%;
+        --destructive: 6 68% 49%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 45 20% 88%;
+        --input: 45 20% 88%;
+        --ring: 24 80% 42%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+}
+
+::selection {
+    background-color: #d35400;
+    color: #faf9f6;
+}
+"
